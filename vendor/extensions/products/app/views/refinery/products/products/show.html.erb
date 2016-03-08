@@ -1,0 +1,18 @@
+<%#= render @product %>
+<div id="product">
+  <div id="photo">
+    <%= image_fu @product.photo, "400x400" %>
+    <div id="date">
+      <%=raw @product.date %>
+    </div>
+  </div>
+  <div id="title">
+    <h2><%= @product.title %></h2>
+  </div>
+  <div id="description">
+    <h3>Description</h3>
+    <%=raw @product.description %>
+  </div>
+</div>
+<%= render '/refinery/content_page' %>
+<%= link_to "All Products", refinery.products_products_url%>

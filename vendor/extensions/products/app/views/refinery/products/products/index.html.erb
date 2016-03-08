@@ -1,0 +1,25 @@
+<%#= render @products %>
+<div id="products">
+	<div id="products_list">
+		<% @products.each do |product| %>
+			<div id="product">
+				<div id="photo">
+				  <%= image_fu product.photo, "400x400", class: "image-align-#{cycle("left","right")}" %>
+				  <div id="date">
+				    <%=raw product.date %>
+				  </div>
+				</div>
+				<div id="title">
+				  <h2><%= product.title %></h2>
+				</div>
+				<div id="description">
+				  <h3>Description</h3>
+				  <%=raw product.description %>
+				</div>
+				<%= link_to "More info", refinery.products_product_path(product)%>
+			</div>
+		<% end %>
+	</div>
+</div>
+<%= link_to "Main page", "#" %>
+<%= render '/refinery/content_page' %>
